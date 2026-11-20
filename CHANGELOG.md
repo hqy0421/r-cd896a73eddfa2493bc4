@@ -1,3 +1,17 @@
+Unreleased
+==========
+
+* Feat: added ``category_encoders.migration`` with ``migrate_onehot_pair_to_sum``,
+  a migration tool that re-expresses a deployed two-field linear score
+  (intercept, main effects and the two-field interaction) from one-hot space
+  into ``SumEncoder`` space without retraining or access to the training data.
+  The new encoders are fitted on the categories declared by the old encoders,
+  the new coefficients are computed algebraically (unique, hence deterministic),
+  and the migration is verified by actually transforming every combination of
+  declared categories - including declared missing values and unseen probe
+  inputs - with both the old and the new encoders. Combinations whose scores
+  cannot be matched exactly are reported as structured conflicts.
+
 v.2.11.2
 ========
 

@@ -127,6 +127,7 @@ Contents:
    jamesstein
    leaveoneout
    mestimate
+   migration
    multihot
    onehot
    ordinal
